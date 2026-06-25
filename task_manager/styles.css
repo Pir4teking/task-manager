@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ecf0f1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  align-self: center;
+  margin: auto;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #3498db;
+}
+
+section {
+  margin: 20px 0;
+}
+
+h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.add-task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.add-task form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.add-task form input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #bdc3c7;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.add-task form button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-task form button:hover {
+  opacity: 0.8;
+}
+
+.tasks {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ecf0f1;
+  border-radius: 5px;
+}
+
+button.complete {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.complete:hover {
+  opacity: 0.8;
+}
+
+button.pending {
+  background-color: #f39c12;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.pending:hover {
+  opacity: 0.8;
+}
+
+#pending-tasks li {
+  background-color: #fff3cd;
+}
+
+#completed-tasks li {
+  background-color: #d4edda;
+  text-decoration: line-through;
+}
+
+/*# sourceMappingURL=styles.css.map */

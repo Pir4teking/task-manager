@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Tareas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Task manager</h1>
+    
+    <!-- Add new task section -->
+    <section class="add-task">
+      <h2>Add new task</h2>
+      <form id="task-form">
+        <input type="text" id="task-input" placeholder="Type a task..." required />
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
+    <!-- Pending tasks section -->
+    <section class="tasks">
+      <h2>Pending tasks</h2>
+      <ul id="pending-tasks">
+        <!-- Pending tasks will be added here-->
+      </ul>
+    </section>
+
+    <!-- Completed tasks section -->
+    <section class="tasks">
+      <h2>Completed tasks</h2>
+      <ul id="completed-tasks">
+        <!-- completed tasks will be added here -->
+      </ul>
+    </section>
+  </div>
+
+  <script>
+
+var taskForm = document.getElementById("task-form");
+var taskInput = document.getElementById("task-input");
+var pendingTasksList = document.getElementById("pending-tasks");
+var completedTasksList = document.getElementById("completed-tasks");
+
+// Add task function
+taskForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  
+  const task = taskInput.value.trim();
+  
+  if (task) {
+    const newTaskItem = document.createElement("li");
+    newTaskItem.innerHTML = `
+      ${task}
+      <button class="complete">Done</button>
+    `;
+    pendingTasksList.appendChild(newTaskItem);
+    
+    // Clean input
+    taskInput.value = '';
+  }
+});
+
+// Change task state function
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("complete")) {
+    const taskItem = e.target.parentElement;
+    taskItem.querySelector("button").remove(); // Delete done button
+    completedTasksList.appendChild(taskItem); // Move completed tasks
+    taskItem.style.textDecoration = "line-through"; // add line
+  }
+});
+
+  </script>
+</body>
+</html>
